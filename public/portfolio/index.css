@@ -1,0 +1,35 @@
+body {
+    font-family:  Arial, sans-serif ;
+    background-color: white;   
+    line-height: 1.6;
+    padding: 10px;    
+}
+ 
+header {
+   text-align:center;
+   background-color :#660B05;
+   color: #FAF8F1;
+   padding: 20px;   
+   border-radius : 8px;
+}
+section {
+    background-color: #FAF8F1;  
+    padding: 15px;              
+    box-shadow: 1px 4px 8px #888888; 
+    margin-bottom: 20px;        
+    min-height: 75vh;
+}
+
+.colorlabel
+{
+color: #4E1F00;
+}
+
+main {
+    display: flex;
+    }    
+
+
+    
+
+

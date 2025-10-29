@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Card</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
+    />
+  </head>
+  <body class="flex">
+    <form id="search">
+      <!-- <i class="iconoir-search "></i> -->
+
+      <input type="text" placeholder="Search city..." name="Search" />
+      <button type="submit">Search</button>
+    </form>
+
+    <div id="card" class="card ">
+      <div class="weather flex">
+        <h2 id="city-name">Madrid</h2>
+        <p id="rain">chance of rain :0%</p>
+        <i class="iconoir-sun-light icon" id="weather-icon"> </i>
+        <h1 class="temp" id="temperature">31°</h1>
+      </div>
+
+      <div class="details flex">
+        <div class="box flex">
+          <p>Humidity</p>
+          <p class="value" id="humidityValue">3</p>
+        </div>
+
+        <div class="box flex">
+          <p>Wind</p>
+          <p class="value" id="wind">0.2 km/h</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="history-container" class="none">
+      <h3>Search History</h3>
+      <table id="history-table" border="1">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>City</th>
+            <td>Time</td>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    
+    <script src="index.js"></script>
+  </body>
+</html>

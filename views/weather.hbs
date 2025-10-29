@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather in {{city}}</title>
+    <link rel="stylesheet" href="/static/stylesheets/weather.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
+    />
+  </head>
+  <body class="flex">
+
+    {{#if error}}
+      <h2 style="color: #ff6b6b;">{{error}}</h2>
+    {{else if message}}
+      <h2>{{message}}</h2>
+    {{else}}
+      <div id="card" class="card">
+        <div class="weather flex">
+          <h2 id="city-name">{{city}}</h2>
+          <p id="rain">Chance of rain: {{rainPercentage}}%</p>
+
+          {{#if isDay}}
+            <i class="iconoir-sun-light icon" id="weather-icon"></i>
+          {{else}}
+            <i class="iconoir-half-moon icon" id="weather-icon"></i>
+          {{/if}}
+
+          <h1 class="temp" id="temperature">{{temperature}}{{temperatureUnit}}</h1>
+        </div>
+
+        <div class="details flex">
+          <div class="box flex">
+            <p>Humidity</p>
+            <p class="value" id="humidityValue">{{humidity}}%</p>
+          </div>
+
+          <div class="box flex">
+            <p>Wind</p>
+            <p class="value" id="wind">{{windspeed}} {{windspeedUnit}}</p>
+          </div>
+        </div>
+      </div>
+    {{/if}}
+
+  </body>
+</html>
