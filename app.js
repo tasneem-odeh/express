@@ -4,9 +4,13 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const weatherRouter = require('./routes/weather');
+ const indexRouter = require('./routes/index');
+ const usersRouter = require('./routes/users');
+ const weatherRouter = require('./routes/weather');
+
+ const categoriesRoutes = require('./routes/categories');
+ const inventoriesRoutes = require('./routes/inventories');
+ const productsRoutes = require('./routes/products');
 
 const app = express();
 
@@ -21,9 +25,12 @@ app.use(cookieParser());
 app.use("/static", express.static(path.join(__dirname, 'public')));
 app.use('/portfolio', express.static(path.join(__dirname, 'public/portfolio')));
 
-app.use('/', indexRouter);
+ app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/weather', weatherRouter);
+ app.use('/weather', weatherRouter);
+ app.use("/categories", categoriesRoutes);
+ app.use("/inventories", inventoriesRoutes);
+ app.use("/products", productsRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
